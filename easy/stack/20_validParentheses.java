@@ -8,6 +8,7 @@ class Solution {
         map.put(']', '[');
 
         for(char c : s.toCharArray()) {
+            if(!map.containsKey(c)) {
             list.add(c);
             continue;
             }
