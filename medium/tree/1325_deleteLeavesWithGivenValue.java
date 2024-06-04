@@ -11,3 +11,6 @@ class Solution {
         return root;
     }
 }
+
+// attempt 2, 15min. 06/04/24
+// same sol
