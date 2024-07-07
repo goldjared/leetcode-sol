@@ -26,3 +26,5 @@ class Solution {
         return false;
     }
 }
+// 07/07/24 3min
+// same sol

@@ -33,3 +33,19 @@ class Solution {
         
     }
 }
+
+// 07/07/24 6:30min 
+// o(n log n)
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        Queue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        for(int n : stones) pq.add(n);
+        while(pq.size() > 1) {
+            int x = pq.poll();
+            int y = pq.poll();
+            if(x != y) pq.add(x - y);
+        }
+
+        return pq.size() > 0 ? pq.poll() : 0;
+    }
+}
