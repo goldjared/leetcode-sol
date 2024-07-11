@@ -38,3 +38,30 @@ class Solution {
         return Arrays.equals(sArr, tArr);
     }
 }
+
+// 7/09/24 14min
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+        Map<Character, Integer> m1 = new HashMap<>();
+        Map<Character, Integer> m2 = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            m1.put(s.charAt(i), m1.getOrDefault(s.charAt(i), 0) + 1);
+            m2.put(t.charAt(i), m2.getOrDefault(t.charAt(i), 0) + 1);
+        }
+
+        for (Character c : m1.keySet()) {
+            if (!m1.get(c).equals(m2.getOrDefault(c, 0)))
+                return false;
+        }
+
+        return true;
+
+    }
+}
+
+
+
+
